@@ -6,6 +6,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
+import com.springboot.bankapp.model.Account;
+import com.springboot.bankapp.model.Help;
 import com.springboot.bankapp.model.UserInfo;
 
 public interface UserRepository extends JpaRepository<UserInfo, Long> {
@@ -24,8 +26,6 @@ public interface UserRepository extends JpaRepository<UserInfo, Long> {
 	@Modifying
 	@Query("update Account a SET a.balance=a.balance + ?2 where a.accountNumber=?1")
 	void creditAmount(String toAccountNumber, double amount);
-
-	
 
 	
 }
