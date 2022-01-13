@@ -39,7 +39,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		 .antMatchers("/transfer").authenticated()
 		 .antMatchers("/statement/**/**").authenticated()
 		 .antMatchers("/deposit/**").authenticated()
-		 .antMatchers("//balance").authenticated()
+		 .antMatchers("/").authenticated()
 		 .anyRequest()
 		 .permitAll()
 		 .and()
